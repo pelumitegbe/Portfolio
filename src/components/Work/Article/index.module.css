@@ -1,0 +1,126 @@
+.articleContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+	height: 100%;
+	flex: 0 0 calc((80vw - 3vw) / 2);
+	/* flex: 0 0 50vw; */
+	scroll-snap-align: start;
+	background: var(--background2);
+}
+
+.articleContainer .article {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: flex-end;
+	padding: 2rem;
+}
+.articleContainer .bgVideo {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	transition: opacity 0.5s ease;
+	object-fit: cover;
+	z-index: 1;
+}
+
+.articleContainer .textOverlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.9);
+	z-index: 1;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+	background-size: cover;
+	background-position: center;
+}
+
+.articleContainer .mainOverlay {
+	opacity: 0;
+	transform: translateY(10px);
+	transition: opacity 0.5s ease, transform 0.5s ease;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	width: 100%;
+	z-index: 3;
+}
+.mainOverlay .articleDesc {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	z-index: 4;
+}
+.articleDesc p {
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+.articleContainer:hover .mainOverlay {
+	opacity: 1;
+	transform: translateY(0);
+}
+.articleContainer:hover .bgVideo {
+	opacity: 0;
+}
+.articleContainer:hover .textOverlay {
+	opacity: 1;
+}
+.articleContainer .articleBtns {
+	display: flex;
+	gap: 1rem;
+}
+
+.articleBtns a:nth-child(2) button {
+	background: var(--primary-color);
+	color: black;
+}
+
+.articleBtns a:nth-child(1) button:hover {
+	background-color: #ffffff1a;
+	color: white;
+}
+/* Medium screens (tablet) */
+@media (min-width: 769px) and (max-width: 1024px) {
+	.articleContainer {
+		padding: 1.5rem;
+		flex: 0 0 calc((80vw - 2vw) / 2);
+	}
+	.articleContainer .article {
+		padding: 1.5rem;
+	}
+	.mainOverlay .articleDesc {
+		gap: 1.3rem;
+	}
+	.articleDesc p {
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 768px) {
+	.articleContainer {
+		flex: 0 0 calc(85vw - 2vw);
+	}
+	.articleDesc p {
+		font-size: 16px;
+	}
+}
+@media (max-width: 480px) {
+	.articleContainer {
+		flex: 0 0 calc(85vw - 2vw);
+	}
+	.articleContainer .article {
+		padding: 1.3rem;
+	}
+	.mainOverlay .articleDesc {
+		gap: 1rem;
+	}
+	.articleDesc p {
+		font-size: 14px;
+	}
+}

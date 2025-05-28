@@ -1,0 +1,394 @@
+.navigation {
+	display: flex;
+	justify-content: space-between;
+	padding: 1% 3%;
+	font-family: "Azonix", Arial, Helvetica, sans-serif;
+	align-items: center;
+	position: sticky;
+	top: 0;
+	z-index: 99;
+	transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo img {
+	max-height: 100px;
+	width: 100%;
+	object-fit: contain;
+}
+.navigation ul {
+	display: flex;
+}
+.navigation li {
+	display: flex;
+	text-transform: uppercase;
+}
+
+.eye_container {
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.eye {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	position: relative;
+	border: 1px solid var(--primary-color);
+}
+
+.pupil {
+	width: 10px;
+	height: 10px;
+	background-color: var(--primary-color);
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: all 0.1s ease;
+}
+.left_eye {
+	position: relative;
+}
+
+.right_eye {
+	position: relative;
+}
+.menuItems {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+.themeToggle {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 0.7rem;
+	justify-content: space-between;
+	background: var(--background);
+	border-radius: 20px;
+	border: 1px solid var(--primary-color);
+	padding: 5px;
+	cursor: pointer;
+	z-index: 99;
+}
+
+.themeToggle .icon {
+	font-size: 20px;
+	user-select: none;
+	pointer-events: none;
+	display: flex;
+	align-items: center;
+}
+
+.themeToggle svg {
+	color: var(--primary-color);
+}
+
+.themeToggle .ball {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background-color: var(--primary-color);
+	border-radius: 50%;
+	transition: all 0.3s ease;
+	z-index: 1;
+}
+
+.themeToggle .moveRight {
+	right: 5px;
+}
+
+.themeToggle .moveLeft {
+	left: 5px;
+}
+
+.menuToggle {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	cursor: pointer;
+	user-select: none;
+	z-index: 99;
+}
+
+.menuBtns {
+	height: 1rem;
+	overflow: hidden;
+	flex: 1;
+	width: 60px;
+	z-index: 99;
+}
+.menuBtns > a {
+	height: 1rem;
+	display: block;
+	text-align: left;
+}
+.menuIconWrapper {
+	position: relative;
+	z-index: 10000;
+}
+
+.menuIcon {
+	width: 60px;
+	height: 60px;
+	/* background: black; */
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	flex-direction: column;
+	gap: 5px;
+	padding: 1rem;
+	cursor: pointer;
+	z-index: 10000;
+	mix-blend-mode: difference;
+	position: relative;
+	pointer-events: auto;
+}
+
+.menuIcon .bounds {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: all;
+	z-index: 10000;
+}
+
+.menuIcon .bounds:hover {
+	transform: scale(3);
+}
+
+.menuIcon span {
+	display: block;
+	height: 2px;
+	background: var(--text-color);
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	transition: 0.5s ease;
+	z-index: 10001;
+	position: relative;
+	mix-blend-mode: difference;
+}
+
+.bar1 {
+	width: 100%;
+}
+
+.bar2 {
+	width: 70%;
+}
+
+.bar3 {
+	width: 50%;
+}
+
+.menuIcon.open .bar1 {
+	transform: rotate(45deg) translateY(5px) translateX(5px);
+	width: 100%;
+}
+
+.menuIcon.open .bar2 {
+	opacity: 0;
+	transform: translateX(-10px);
+}
+
+.menuIcon.open .bar3 {
+	transform: rotate(-45deg) translateY(-5px) translateX(5px);
+	width: 100%;
+}
+
+.dropdown {
+	position: absolute;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	right: 0;
+	background: var(--foreground);
+	border-radius: 1rem;
+	list-style: none;
+	z-index: 9;
+	justify-content: center;
+	gap: 2rem;
+	color: var(--text-color);
+}
+
+.dropdown.open {
+	transform: translateX(0);
+}
+
+/* Medium screens (tablet) */
+@media (min-width: 769px) and (max-width: 1024px) {
+	.logo img {
+		max-height: 80px;
+	}
+
+	.eye_container {
+		gap: 0.3rem;
+	}
+
+	.eye {
+		width: 15px;
+		height: 15px;
+	}
+
+	.pupil {
+		width: 8px;
+		height: 8px;
+		background-color: var(--primary-color);
+	}
+	.menuItems {
+		gap: 1.5rem;
+	}
+
+	.themeToggle {
+		gap: 0.5rem;
+		border-radius: 15px;
+		padding: 3px;
+	}
+
+	.themeToggle .icon {
+		font-size: 15px;
+	}
+
+	.themeToggle .ball {
+		width: 15px;
+		height: 15px;
+	}
+
+	.themeToggle .moveRight {
+		right: 3px;
+	}
+
+	.themeToggle .moveLeft {
+		left: 3px;
+	}
+	.menuToggle {
+		gap: 0.7rem;
+	}
+
+	.menuIcon {
+		width: 50px;
+		height: 50px;
+		padding: 0.7rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.logo img {
+		max-height: 70px;
+	}
+
+	.eye_container {
+		gap: 0.3rem;
+	}
+
+	.eye {
+		width: 15px;
+		height: 15px;
+	}
+
+	.pupil {
+		width: 8px;
+		height: 8px;
+		background-color: var(--primary-color);
+	}
+	.menuItems {
+		gap: 1.2rem;
+	}
+
+	.themeToggle {
+		gap: 0.5rem;
+		padding: 2px;
+	}
+
+	.themeToggle .icon {
+		font-size: 13px;
+	}
+
+	.themeToggle .ball {
+		width: 13px;
+		height: 13px;
+	}
+
+	.themeToggle .moveRight {
+		right: 3px;
+	}
+
+	.themeToggle .moveLeft {
+		left: 3px;
+	}
+	.menuToggle {
+		gap: 0.5rem;
+	}
+
+	.menuIcon {
+		width: 40px;
+		height: 40px;
+		padding: 0.5rem;
+	}
+}
+@media (max-width: 480px) {
+	.logo img {
+		max-height: 50px;
+	}
+
+	.eye_container {
+		gap: 0.3rem;
+	}
+
+	.eye {
+		width: 12px;
+		height: 12px;
+	}
+
+	.pupil {
+		width: 7px;
+		height: 7px;
+	}
+	.menuItems {
+		gap: 0.5rem;
+	}
+
+	.themeToggle {
+		gap: 0.5rem;
+		padding: 2px;
+	}
+
+	.themeToggle .icon {
+		font-size: 11px;
+	}
+
+	.themeToggle .ball {
+		width: 11px;
+		height: 11px;
+	}
+
+	.themeToggle .moveRight {
+		right: 2px;
+	}
+
+	.themeToggle .moveLeft {
+		left: 2px;
+	}
+	.menuToggle {
+		gap: 0rem;
+	}
+	.menuBtns {
+		width: 60px;
+	}
+
+	.menuIcon {
+		width: 30px;
+		height: 30px;
+		padding: 0.3rem;
+	}
+}

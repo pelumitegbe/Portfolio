@@ -1,0 +1,139 @@
+.main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: calc(100vh - 4rem);
+	position: relative;
+}
+.main section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex: 1;
+	gap: 1.2rem;
+	width: 100%;
+}
+
+.main section h2 {
+	font-size: 32px;
+}
+.main section h1 {
+	font-size: 56px;
+	line-height: 50px;
+	font-family: "Azonix";
+}
+.main .picSection {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	flex: 1;
+}
+.picSection img {
+	width: 100%;
+}
+.main .main_buttons {
+	display: flex;
+	gap: 1rem;
+}
+.main .main_buttons .main_buttons_n2 {
+	background: var(--background2);
+	color: var(--text-color);
+	border: 1px solid var(--text-color);
+}
+
+.main .main_buttons .main_buttons_n2:hover {
+	background: #ffffff1a;
+}
+
+.scrollPrompt {
+	position: absolute;
+	bottom: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: 99;
+	animation: fadeOut 1s ease-out 5s forwards;
+}
+
+@keyframes fadeOut {
+	to {
+		opacity: 0;
+		transform: translateY(10px);
+		pointer-events: none;
+	}
+}
+
+.arrow {
+	width: 40px;
+	height: 40px;
+	animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(8px);
+	}
+}
+
+/* Medium screens (tablet) */
+@media (min-width: 769px) and (max-width: 1024px) {
+	.main section {
+		gap: 1rem;
+	}
+	.main section h2 {
+		font-size: 25px;
+	}
+	.main section h1 {
+		font-size: 45px;
+	}
+	.main .main_buttons {
+		gap: 0.8rem;
+	}
+	.arrow {
+		width: 35px;
+		height: 35px;
+	}
+}
+
+@media (max-width: 768px) {
+	.main section {
+		gap: 1rem;
+	}
+	.main section h2 {
+		font-size: 20px;
+	}
+	.main section h1 {
+		font-size: 35px;
+		line-height: 40px;
+	}
+	.main .main_buttons {
+		gap: 0.5rem;
+	}
+	.arrow {
+		width: 30px;
+		height: 30px;
+	}
+}
+@media (max-width: 480px) {
+	.main {
+		flex-direction: column;
+	}
+	.main section {
+		gap: 0.5rem;
+	}
+	.main section h2 {
+		font-size: 16px;
+	}
+	.main section h1 {
+		font-size: 28px;
+		line-height: 30px;
+	}
+	.arrow {
+		width: 20px;
+		height: 20px;
+	}
+}

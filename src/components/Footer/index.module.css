@@ -1,0 +1,22 @@
+.footer {
+	background-color: var(--background2);
+	padding: 1rem;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo img {
+	max-height: 40px;
+	width: 100%;
+	object-fit: contain;
+}
+
+.footer a {
+	color: var(--primary-color);
+}

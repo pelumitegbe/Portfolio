@@ -1,0 +1,120 @@
+.allAdventures {
+	display: flex;
+	flex-direction: column;
+}
+.adventures {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.adventuresCont {
+	position: fixed;
+	top: -10vh;
+	left: 0;
+	height: 120vh;
+	width: 100%;
+}
+
+.adventuresCont div {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.adventures .overlay {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	pointer-events: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10%;
+	font-family: "Azonix", Arial, Helvetica, sans-serif;
+}
+
+.advGrid .gallery {
+	height: 175vh;
+	background: var(--background);
+	display: flex;
+	gap: 2vw;
+	padding: 2vw;
+	overflow: hidden;
+	position: relative;
+}
+
+.advGrid .column {
+	width: 25%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 2vw;
+	position: relative;
+}
+
+.advGrid .column:nth-of-type(1) {
+	top: -40%;
+}
+
+.advGrid .column:nth-of-type(2) {
+	top: -30%;
+}
+
+.advGrid .column:nth-of-type(3) {
+	top: -50%;
+}
+
+.advGrid .column:nth-of-type(4) {
+	top: -35%;
+}
+
+.advGrid .imageCont {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	border-radius: 1vw;
+}
+
+.advGrid .imageCont::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	border-radius: 1vw;
+	z-index: 1;
+}
+
+.advGrid img {
+	object-fit: cover;
+	transition: all 0.3s ease;
+}
+
+.advGrid .imageCont:hover::after {
+	opacity: 1;
+}
+
+.advGrid .imageCont:hover img {
+	/* filter: sepia(60%); */
+	transform: scale(1.02);
+}
+
+/* Medium screens (tablet) */
+@media (min-width: 769px) and (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+	.advGrid .gallery {
+		height: 160vh;
+	}
+}
+@media (max-width: 480px) {
+	.advGrid .gallery {
+		height: 150vh;
+	}
+}

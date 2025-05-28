@@ -1,0 +1,42 @@
+.cursor,
+.cursor_follower {
+	position: fixed;
+	top: 0;
+	pointer-events: none;
+	z-index: 9999;
+	border-radius: 50%;
+	/* mix-blend-mode: difference; */
+	transform: translate(-50%, -50%);
+}
+
+.cursor {
+	width: 10px;
+	height: 10px;
+	background: var(--text-color);
+	transition: transform 0.1s ease;
+	z-index: 2;
+}
+
+.cursor_follower {
+	width: 35px;
+	height: 35px;
+	background: var(--primary-color);
+	transform-origin: center;
+}
+
+.cursor_follower.active {
+	transform: scale(2);
+	background: transparent;
+	border: 2px solid var(--primary-color);
+}
+.cursor_follower.scale {
+	width: 60px;
+	height: 60px;
+	transition: width 0.5s, height 0.5s;
+}
+.cursor_follower.rectangularize {
+	width: 80px;
+	height: 30px;
+	border-radius: 2px;
+	transition: width 0.5s, height 0.5s;
+}

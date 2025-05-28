@@ -1,0 +1,37 @@
+.paragraph {
+	display: flex;
+	line-height: 1;
+	color: var(--text-color2);
+	flex-wrap: wrap;
+}
+.paragraph .word {
+	position: relative;
+	margin-right: 12px;
+	margin-top: 12px;
+}
+
+.word .shadow {
+	position: absolute;
+	opacity: 20%;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+	.paragraph .word {
+		margin-right: 10px;
+		margin-top: 10px;
+	}
+}
+@media (max-width: 480px) {
+	.paragraph .word {
+		margin-right: 8px;
+		margin-top: 8px;
+	}
+}
+
+/* .char {
+	display: inline-block;
+	position: relative;
+} */
