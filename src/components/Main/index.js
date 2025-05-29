@@ -45,7 +45,7 @@ const Main = () => {
 					</SlideLeft>
 					<SlideRight delay={1.7}>
 						<a
-							href='https://drive.google.com/file/d/1nF2v2HzhTrhJbW697PjSWAeHCrNhirPr/view?usp=sharing'
+							href={`${process.env.NEXT_PUBLIC_CV}`}
 							target='_blank'>
 							<button className={styles.main_buttons_n2}>My CV</button>
 						</a>
