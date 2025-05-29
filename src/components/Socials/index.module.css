@@ -10,7 +10,7 @@
 	mix-blend-mode: difference;
 }
 .social svg {
-	font-size: 24px;
+	font-size: 28px;
 	color: var(--primary-color);
 }
 
@@ -30,26 +30,26 @@
 /* Medium screens (tablet) */
 @media (min-width: 769px) and (max-width: 1024px) {
 	.social {
-		gap: 1.5rem;
+		gap: 1.7rem;
 	}
 	.social svg {
-		font-size: 22px;
+		font-size: 26px;
 	}
 }
 
 @media (max-width: 768px) {
 	.social {
-		gap: 1rem;
+		gap: 1.5rem;
 	}
 	.social svg {
-		font-size: 20px;
+		font-size: 24px;
 	}
 }
 @media (max-width: 480px) {
 	.social {
-		gap: 0.7rem;
+		gap: 1rem;
 	}
 	.social svg {
-		font-size: 18px;
+		font-size: 20px;
 	}
 }

@@ -1,6 +1,6 @@
 .navigation {
 	display: flex;
-	justify-content: space-between;
+	/* justify-content: space-between; */
 	padding: 1% 3%;
 	font-family: "Azonix", Arial, Helvetica, sans-serif;
 	align-items: center;
@@ -15,7 +15,7 @@
 	align-items: center;
 }
 .logo img {
-	max-height: 180px;
+	max-height: 150px;
 	width: 100%;
 	object-fit: contain;
 }
@@ -240,7 +240,7 @@
 /* Medium screens (tablet) */
 @media (min-width: 769px) and (max-width: 1024px) {
 	.logo img {
-		max-height: 150px;
+		max-height: 120px;
 	}
 
 	.eye_container {
@@ -296,7 +296,7 @@
 
 @media (max-width: 768px) {
 	.logo img {
-		max-height: 120px;
+		max-height: 100px;
 	}
 
 	.eye_container {
@@ -345,12 +345,12 @@
 	.menuIcon {
 		width: 40px;
 		height: 40px;
-		padding: 0.5rem;
+		padding: 0.4rem;
 	}
 }
 @media (max-width: 480px) {
 	.logo img {
-		max-height: 100px;
+		max-height: 70px;
 	}
 
 	.eye_container {
@@ -399,8 +399,8 @@
 	}
 
 	.menuIcon {
-		width: 30px;
-		height: 30px;
-		padding: 0.5rem;
+		width: 35px;
+		height: 35px;
+		padding: 0.2rem;
 	}
 }

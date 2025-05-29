@@ -87,21 +87,6 @@ const Music = () => {
 		}
 	}, [hasInteracted, isPlaying, currentSongIndex]);
 
-	// const [currentSongIndex, setCurrentSongIndex] = useState(() => {
-	// 	const saved = sessionStorage.getItem("music-currentIndex");
-	// 	return saved !== null ? parseInt(saved) : 0;
-	// });
-
-	// const [isPlaying, setIsPlaying] = useState(() => {
-	// 	const stored = sessionStorage.getItem("music-isPlaying");
-	// 	return stored === null ? true : stored === "true";
-	// });
-
-	// const [isExpanded, setIsExpanded] = useState(() => {
-	// 	const saved = sessionStorage.getItem("music-isExpanded");
-	// 	return saved !== null ? saved === "true" : true;
-	// });
-
 	const audioRef = useRef(null);
 
 	// Save state on change
