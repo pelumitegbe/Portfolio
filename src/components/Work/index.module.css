@@ -10,7 +10,7 @@
 	flex-direction: column;
 	position: sticky;
 	top: 0;
-	height: 100vh;
+	height: calc(100vh - 3rem);
 	overflow: hidden;
 }
 
@@ -44,9 +44,12 @@
 
 /* Medium screens (tablet) */
 @media (min-width: 769px) and (max-width: 1024px) {
+	.work {
+		height: calc(100vh - 3rem);
+	}
 	.workContent {
 		gap: 2rem;
-		margin: 2rem 9%;
+		margin: 3rem 9%;
 	}
 	.work .works {
 		gap: 2vw;
@@ -54,10 +57,19 @@
 }
 
 @media (max-width: 768px) {
+	.work {
+		height: calc(100vh - 3rem);
+	}
 	.workContent {
 		gap: 1.5rem;
-		margin: 2rem 8%;
+		margin: 3rem 7%;
 	}
 }
 @media (max-width: 480px) {
+	.work {
+		height: calc(100vh - 5rem);
+	}
+	.workContent {
+		margin: 5rem 5%;
+	}
 }

@@ -1329,7 +1329,7 @@ export const ScrollSlideLeft = ({
 	const ref = React.useRef(null);
 	const { scrollYProgress } = useScroll({
 		target: ref,
-		offset: ["start 0.6", "start 0.4"], // customize as needed
+		offset: ["start 0.8", "end 0.6"], // customize as needed
 	});
 
 	const x = useTransform(scrollYProgress, [0, 1], [offsetX, "0px"]);
@@ -1364,7 +1364,41 @@ export const ScrollSlideRight = ({
 	const ref = React.useRef(null);
 	const { scrollYProgress } = useScroll({
 		target: ref,
-		offset: ["start 0.6", "start 0.4"],
+		offset: ["start 0.8", "end 0.6"],
+	});
+
+	const x = useTransform(scrollYProgress, [0, 1], [offsetX, "0px"]);
+	const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+	const smoothX = useSpring(x, { stiffness: 100, damping: 30 });
+	const smoothOpacity = useSpring(opacity, { stiffness: 100, damping: 20 });
+
+	const MotionTag = motion[as];
+
+	return (
+		<MotionTag
+			ref={ref}
+			style={{
+				x: smoothX,
+				opacity: smoothOpacity,
+				...style,
+			}}
+			className={className}>
+			{children}
+		</MotionTag>
+	);
+};
+export const ScrollSlideRightContact = ({
+	children,
+	offsetX = "100px",
+	as = "div",
+	className = "",
+	style = {},
+}) => {
+	const ref = React.useRef(null);
+	const { scrollYProgress } = useScroll({
+		target: ref,
+		offset: ["start end", "end end"],
 	});
 
 	const x = useTransform(scrollYProgress, [0, 1], [offsetX, "0px"]);

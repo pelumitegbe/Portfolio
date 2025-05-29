@@ -15,7 +15,7 @@
 	align-items: center;
 }
 .logo img {
-	max-height: 100px;
+	max-height: 180px;
 	width: 100%;
 	object-fit: contain;
 }
@@ -126,7 +126,9 @@
 }
 .menuBtns > a {
 	height: 1rem;
-	display: block;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	text-align: left;
 }
 .menuBtns.open > a {
@@ -238,21 +240,21 @@
 /* Medium screens (tablet) */
 @media (min-width: 769px) and (max-width: 1024px) {
 	.logo img {
-		max-height: 80px;
+		max-height: 150px;
 	}
 
 	.eye_container {
-		gap: 0.3rem;
+		gap: 0.5rem;
 	}
 
 	.eye {
-		width: 15px;
-		height: 15px;
+		width: 18px;
+		height: 18px;
 	}
 
 	.pupil {
-		width: 8px;
-		height: 8px;
+		width: 12px;
+		height: 12px;
 		background-color: var(--primary-color);
 	}
 	.menuItems {
@@ -260,26 +262,26 @@
 	}
 
 	.themeToggle {
-		gap: 0.5rem;
+		gap: 1rem;
 		border-radius: 15px;
-		padding: 3px;
+		padding: 6px;
 	}
 
 	.themeToggle .icon {
-		font-size: 15px;
+		font-size: 18px;
 	}
 
 	.themeToggle .ball {
-		width: 15px;
-		height: 15px;
+		width: 18px;
+		height: 18px;
 	}
 
 	.themeToggle .moveRight {
-		right: 3px;
+		right: 5px;
 	}
 
 	.themeToggle .moveLeft {
-		left: 3px;
+		left: 5px;
 	}
 	.menuToggle {
 		gap: 0.7rem;
@@ -288,13 +290,13 @@
 	.menuIcon {
 		width: 50px;
 		height: 50px;
-		padding: 0.7rem;
+		padding: 1rem;
 	}
 }
 
 @media (max-width: 768px) {
 	.logo img {
-		max-height: 70px;
+		max-height: 120px;
 	}
 
 	.eye_container {
@@ -348,7 +350,7 @@
 }
 @media (max-width: 480px) {
 	.logo img {
-		max-height: 50px;
+		max-height: 100px;
 	}
 
 	.eye_container {
@@ -356,13 +358,13 @@
 	}
 
 	.eye {
-		width: 12px;
-		height: 12px;
+		width: 15px;
+		height: 15px;
 	}
 
 	.pupil {
-		width: 7px;
-		height: 7px;
+		width: 10px;
+		height: 10px;
 	}
 	.menuItems {
 		gap: 0.5rem;
@@ -370,24 +372,24 @@
 
 	.themeToggle {
 		gap: 0.5rem;
-		padding: 2px;
+		padding: 4px;
 	}
 
 	.themeToggle .icon {
-		font-size: 11px;
+		font-size: 15px;
 	}
 
 	.themeToggle .ball {
-		width: 11px;
-		height: 11px;
+		width: 14px;
+		height: 14px;
 	}
 
 	.themeToggle .moveRight {
-		right: 2px;
+		right: 4px;
 	}
 
 	.themeToggle .moveLeft {
-		left: 2px;
+		left: 4px;
 	}
 	.menuToggle {
 		gap: 0rem;
@@ -399,6 +401,6 @@
 	.menuIcon {
 		width: 30px;
 		height: 30px;
-		padding: 0.3rem;
+		padding: 0.5rem;
 	}
 }

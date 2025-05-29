@@ -59,7 +59,8 @@ const Music = () => {
 
 	const [currentSongIndex, setCurrentSongIndex] = useState(0);
 	const [isPlaying, setIsPlaying] = useState(false);
-	const [isExpanded, setIsExpanded] = useState(true);
+	const [isExpanded, setIsExpanded] = useState(false);
+	const [hydrated, setHydrated] = useState(false);
 
 	useEffect(() => {
 		if (typeof window !== "undefined") {
@@ -67,11 +68,24 @@ const Music = () => {
 			const playing = sessionStorage.getItem("music-isPlaying");
 			const expanded = sessionStorage.getItem("music-isExpanded");
 
+			if (playing === null) {
+				setIsPlaying(true); // First time visitor, default to playing
+			} else {
+				setIsPlaying(playing === "true");
+			}
 			if (savedIndex) setCurrentSongIndex(parseInt(savedIndex));
-			if (playing) setIsPlaying(playing === "true");
-			if (expanded) setIsExpanded(expanded === "true");
+			if (expanded !== null) {
+				setIsExpanded(expanded === "true");
+			}
 		}
+		setHydrated(true);
 	}, []);
+
+	useEffect(() => {
+		if (hasInteracted && isPlaying && audioRef.current) {
+			audioRef.current.play().catch((e) => console.warn("Auto-play error:", e));
+		}
+	}, [hasInteracted, isPlaying, currentSongIndex]);
 
 	// const [currentSongIndex, setCurrentSongIndex] = useState(() => {
 	// 	const saved = sessionStorage.getItem("music-currentIndex");
@@ -92,16 +106,11 @@ const Music = () => {
 
 	// Save state on change
 	useEffect(() => {
+		if (!hydrated) return;
 		sessionStorage.setItem("music-isPlaying", isPlaying);
 		sessionStorage.setItem("music-currentIndex", currentSongIndex);
 		sessionStorage.setItem("music-isExpanded", isExpanded);
-	}, [isPlaying, currentSongIndex, isExpanded]);
-
-	useEffect(() => {
-		if (hasInteracted && isPlaying && audioRef.current) {
-			audioRef.current.play().catch((e) => console.warn("Auto-play error:", e));
-		}
-	}, [hasInteracted, isPlaying, currentSongIndex]);
+	}, [isPlaying, currentSongIndex, isExpanded, hydrated]);
 
 	const toggleExpand = () => setIsExpanded(!isExpanded);
 

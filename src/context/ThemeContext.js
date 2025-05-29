@@ -11,15 +11,8 @@ export function ThemeProvider({ children }) {
 
 	const [hasInteracted, setHasInteractedState] = useState(false);
 
-	useEffect(() => {
-		if (typeof window !== "undefined") {
-			const stored = sessionStorage.getItem("hasInteracted");
-			setHasInteractedState(stored === "true");
-		}
-	}, []);
-
 	const setHasInteracted = (value) => {
-		sessionStorage.setItem("hasInteracted", value);
+		// sessionStorage.setItem("hasInteracted", value);
 		setHasInteractedState(value);
 	};
 

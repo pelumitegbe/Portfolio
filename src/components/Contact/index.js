@@ -4,7 +4,11 @@ import { FaXTwitter } from "react-icons/fa6";
 import { AiOutlineMail } from "react-icons/ai";
 import Magnetic from "../Magnetic";
 import React, { useState } from "react";
-import { ScrollSlideRight, ScrollSlideUp, SlideLeft } from "@/utils/animations";
+import {
+	ScrollSlideRightContact,
+	ScrollSlideUp,
+	SlideLeft,
+} from "@/utils/animations";
 
 const Contact = () => {
 	const [formData, setFormData] = useState({
@@ -110,7 +114,7 @@ const Contact = () => {
 				</SlideLeft>
 			</div>
 			<div className={styles.right}>
-				<ScrollSlideRight offsetX='150px'>
+				<ScrollSlideRightContact offsetX='150px'>
 					<div className={styles.formContainer}>
 						<h1>Get In Touch</h1>
 						<p>
@@ -166,7 +170,7 @@ const Contact = () => {
 							)}
 						</form>
 					</div>
-				</ScrollSlideRight>
+				</ScrollSlideRightContact>
 			</div>
 		</section>
 	);

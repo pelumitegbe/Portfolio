@@ -16,7 +16,7 @@
 	font-family: "Azonix", Arial, Helvetica, sans-serif;
 }
 .about_text p {
-	font-size: 22px;
+	font-size: 24px;
 }
 .experience {
 	display: flex;
@@ -134,7 +134,7 @@
 		gap: 0.8rem;
 	}
 	.about_text p {
-		font-size: 20px;
+		font-size: 22px;
 	}
 	.experience {
 		gap: 3rem;
@@ -151,7 +151,7 @@
 	}
 	.stack .icon_container::before {
 		padding: 5px;
-		font-size: 10px;
+		font-size: 14px;
 	}
 }
 
@@ -164,7 +164,7 @@
 		gap: 0.5rem;
 	}
 	.about_text p {
-		font-size: 16px;
+		font-size: 18px;
 	}
 	.experience {
 		gap: 2rem;
@@ -181,7 +181,7 @@
 	}
 	.stack .icon_container::before {
 		padding: 5px;
-		font-size: 9px;
+		font-size: 12px;
 	}
 }
 @media (max-width: 480px) {
@@ -189,7 +189,7 @@
 		gap: 0rem;
 	}
 	.about_text p {
-		font-size: 14px;
+		font-size: 16px;
 	}
 	.experience {
 		gap: 1rem;
@@ -204,7 +204,7 @@
 		width: 40%;
 	}
 	.svgContainer path {
-		stroke-width: 0.4px;
+		stroke-width: 0.8px;
 	}
 	.stack {
 		gap: 1rem;
@@ -215,13 +215,13 @@
 		gap: 0.5rem;
 	}
 	.stack_item img {
-		max-height: 1.2rem;
+		max-height: 1.4rem;
 	}
 	.stack .icon_container {
 		padding: 0.2rem;
 	}
 	.stack .icon_container::before {
 		padding: 3px;
-		font-size: 8px;
+		font-size: 10px;
 	}
 }

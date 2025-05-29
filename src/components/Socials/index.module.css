@@ -10,7 +10,7 @@
 	mix-blend-mode: difference;
 }
 .social svg {
-	font-size: 20px;
+	font-size: 24px;
 	color: var(--primary-color);
 }
 
@@ -33,7 +33,7 @@
 		gap: 1.5rem;
 	}
 	.social svg {
-		font-size: 18px;
+		font-size: 22px;
 	}
 }
 
@@ -42,7 +42,7 @@
 		gap: 1rem;
 	}
 	.social svg {
-		font-size: 16px;
+		font-size: 20px;
 	}
 }
 @media (max-width: 480px) {
@@ -50,6 +50,6 @@
 		gap: 0.7rem;
 	}
 	.social svg {
-		font-size: 14px;
+		font-size: 18px;
 	}
 }

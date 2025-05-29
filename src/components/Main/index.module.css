@@ -104,10 +104,10 @@
 		gap: 1rem;
 	}
 	.main section h2 {
-		font-size: 20px;
+		font-size: 22px;
 	}
 	.main section h1 {
-		font-size: 35px;
+		font-size: 38px;
 		line-height: 40px;
 	}
 	.main .main_buttons {
@@ -126,10 +126,10 @@
 		gap: 0.5rem;
 	}
 	.main section h2 {
-		font-size: 16px;
+		font-size: 20px;
 	}
 	.main section h1 {
-		font-size: 28px;
+		font-size: 32px;
 		line-height: 30px;
 	}
 	.arrow {
