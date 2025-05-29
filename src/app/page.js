@@ -2,10 +2,8 @@
 import styles from "./page.module.css";
 import Navigation from "@/components/Navigation";
 import Main from "../components/Main/index";
-
 import About from "../components/About/index";
 import Work from "@/components/Work";
-
 import StickyCursor from "@/components/StickyCursor";
 import Adventures from "@/components/Adventures";
 import Contact from "@/components/Contact";

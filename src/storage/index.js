@@ -10,6 +10,15 @@ export const articles = [
 		github: "https://github.com/oluwategbe/PersonalityTest",
 	},
 	{
+		title: "Portfolio",
+		description: "My personal portfolio built with Next.js",
+		imgSrc: "/images/portfolio.png",
+		bg: "grey",
+		videoSrc: "/images/porfolioVid.mov",
+		link: "https://personality-sphere.vercel.app/",
+		github: "https://github.com/pelumitegbe/Portfolio",
+	},
+	{
 		title: "Get Shoes",
 		description:
 			"Browse the latest styles and shop your favorite shoes with ease—fast, simple, and stylish.",
