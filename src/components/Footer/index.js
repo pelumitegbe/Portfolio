@@ -1,7 +1,13 @@
 import styles from "./index.module.css";
-import { FaInstagram, FaLinkedin, FaGithub, FaXTwitter } from "react-icons/fa6";
+import React, { useState } from "react";
 
 const Footer = () => {
+	const [year, setYear] = useState("");
+
+	React.useEffect(() => {
+		setYear(new Date().getFullYear());
+	}, []);
+
 	return (
 		<footer className={styles.footer}>
 			<div className={styles.logo}>
@@ -11,7 +17,7 @@ const Footer = () => {
 				/>
 			</div>
 			<p>
-				&copy; {new Date().getFullYear()}{" "}
+				&copy; {year}{" "}
 				<a
 					href='https://www.linkedin.com/in/pelumitegbe'
 					target='_blank'>

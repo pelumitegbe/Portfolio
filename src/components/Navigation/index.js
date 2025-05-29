@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./index.module.css";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -14,9 +14,14 @@ const Navigation = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
 	const { theme, toggleTheme, isMobile } = useTheme();
+	const dropdownRef = useRef(null);
 
 	const toggleMenu = () => {
-		setMenuOpen((prev) => !prev);
+		setMenuOpen((prev) => {
+			const next = !prev;
+			console.log("Menu will be:", next);
+			return next;
+		});
 	};
 
 	const [leftPupilPositions, setLeftPupilPositions] = React.useState({
@@ -27,6 +32,19 @@ const Navigation = () => {
 		left: 0,
 		top: 0,
 	});
+
+	React.useEffect(() => {
+		const handleClickOutside = (event) => {
+			if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+				setMenuOpen(false);
+			}
+		};
+
+		document.addEventListener("click", handleClickOutside);
+		return () => {
+			document.removeEventListener("click", handleClickOutside);
+		};
+	}, []);
 
 	React.useEffect(() => {
 		const handleMouseMove = (e) => {
@@ -161,7 +179,9 @@ const Navigation = () => {
 					</div>
 				</div>
 			</MobileRevealY>
-			<div className={styles.menuItems}>
+			<div
+				className={styles.menuItems}
+				ref={dropdownRef}>
 				<SlideRight delay={0.5}>
 					<div
 						className={styles.themeToggle}
@@ -182,18 +202,19 @@ const Navigation = () => {
 				<MobileRevealY
 					delay={1}
 					position='static'>
-					<div
-						className={styles.menuToggle}
-						onClick={toggleMenu}>
-						<div className={styles.menuBtns}>
+					<div className={styles.menuToggle}>
+						<div
+							className={`${styles.menuBtns} ${menuOpen ? styles.open : ""}`}>
 							<motion.a
-								animate={{ y: menuOpen ? "-100%" : "0", opacity: 1 }}
+								onClick={toggleMenu}
+								animate={{ y: menuOpen ? "-120%" : "0", opacity: 1 }}
 								transition={{ duration: 0.5, ease: [0.65, 0, 0.35, 1] }}
 								initial={{ opacity: 0 }}>
 								Menu
 							</motion.a>
 							<motion.a
-								animate={{ y: menuOpen ? "-100%" : "0", opacity: 1 }}
+								onClick={toggleMenu}
+								animate={{ y: menuOpen ? "-120%" : "0", opacity: 1 }}
 								transition={{ duration: 0.5, ease: [0.65, 0, 0.35, 1] }}
 								initial={{ opacity: 0 }}>
 								Close
@@ -204,7 +225,8 @@ const Navigation = () => {
 								<div
 									className={`${styles.menuIcon} ${
 										menuOpen ? styles.open : ""
-									}`}>
+									}`}
+									onClick={toggleMenu}>
 									<span className={styles.bar1}></span>
 									<span className={styles.bar2}></span>
 									<span className={styles.bar3}></span>

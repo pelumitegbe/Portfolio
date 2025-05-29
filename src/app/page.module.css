@@ -1,30 +1,3 @@
 .page {
 	position: relative;
 }
-.page .social {
-	display: flex;
-	flex-direction: column;
-	position: fixed;
-	bottom: 3%;
-	right: 3%;
-	z-index: 9999;
-	pointer-events: none;
-	mix-blend-mode: difference;
-}
-.social svg {
-	font-size: 20px;
-	color: var(--primary-color);
-}
-
-.social .bounds {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	pointer-events: all;
-}
-
-.social .bounds:hover {
-	transform: scale(3.5);
-}

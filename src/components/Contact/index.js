@@ -4,12 +4,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { AiOutlineMail } from "react-icons/ai";
 import Magnetic from "../Magnetic";
 import React, { useState } from "react";
-import {
-	ScrollSlideLeft,
-	ScrollSlideRight,
-	ScrollSlideUp,
-	SlideLeft,
-} from "@/utils/animations";
+import { ScrollSlideRight, ScrollSlideUp, SlideLeft } from "@/utils/animations";
 
 const Contact = () => {
 	const [formData, setFormData] = useState({
@@ -54,7 +49,9 @@ const Contact = () => {
 	};
 
 	return (
-		<section className={`${styles.contact} page`}>
+		<section
+			className={`${styles.contact} page`}
+			id='contact'>
 			<div className={styles.left}>
 				<ScrollSlideUp offsetY='150px'>
 					<img

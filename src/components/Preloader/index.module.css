@@ -1,0 +1,94 @@
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--background);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	gap: 1rem;
+}
+
+.image {
+	max-width: 180px;
+	height: auto;
+	object-fit: contain;
+}
+
+.nameWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	gap: 0.5rem;
+	width: 100%;
+}
+.name {
+	align-items: flex-end;
+}
+
+.role {
+	align-items: flex-start;
+}
+
+.name,
+.role {
+	text-transform: uppercase;
+	color: var(--text-color);
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	line-height: 1;
+}
+
+.divider {
+	height: 70px;
+	width: 7px;
+	background-color: var(--primary-color);
+	border-radius: 10px;
+	transform-origin: bottom;
+}
+.overlay button {
+	width: 100%;
+}
+
+/* Medium screens (tablet) */
+@media (min-width: 769px) and (max-width: 1024px) {
+	.image {
+		max-width: 150px;
+	}
+	.divider {
+		width: 6px;
+		border-radius: 10px;
+	}
+}
+
+@media (max-width: 768px) {
+	.image {
+		max-width: 130px;
+	}
+	.divider {
+		width: 5px;
+		border-radius: 10px;
+	}
+}
+@media (max-width: 480px) {
+	.image {
+		max-width: 100px;
+	}
+	.divider {
+		width: 5px;
+	}
+}

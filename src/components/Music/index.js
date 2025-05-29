@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./index.module.css";
 import {
 	FaPlay,
@@ -8,8 +8,8 @@ import {
 	FaPlus,
 	FaMinus,
 } from "react-icons/fa";
-import { MobileRevealY, RevealLeft } from "@/utils/animations";
 import { motion } from "framer-motion";
+import { useTheme } from "@/context/ThemeContext";
 
 const playlist = [
 	{
@@ -55,24 +55,45 @@ const playlist = [
 ];
 
 const Music = () => {
-	const [isExpanded, setIsExpanded] = useState(true);
-	const [currentSongIndex, setCurrentSongIndex] = useState(0);
-	const [isPlaying, setIsPlaying] = useState(true);
+	const { hasInteracted } = useTheme();
+	const [currentSongIndex, setCurrentSongIndex] = useState(() => {
+		const saved = sessionStorage.getItem("music-currentIndex");
+		return saved !== null ? parseInt(saved) : 0;
+	});
+
+	const [isPlaying, setIsPlaying] = useState(() => {
+		const stored = sessionStorage.getItem("music-isPlaying");
+		return stored === null ? true : stored === "true";
+	});
+
+	const [isExpanded, setIsExpanded] = useState(() => {
+		const saved = sessionStorage.getItem("music-isExpanded");
+		return saved !== null ? saved === "true" : true;
+	});
+
 	const audioRef = useRef(null);
 
-	const toggleExpand = () => setIsExpanded(!isExpanded);
+	// Save state on change
+	useEffect(() => {
+		sessionStorage.setItem("music-isPlaying", isPlaying);
+		sessionStorage.setItem("music-currentIndex", currentSongIndex);
+		sessionStorage.setItem("music-isExpanded", isExpanded);
+	}, [isPlaying, currentSongIndex, isExpanded]);
 
-	React.useEffect(() => {
-		audioRef.current?.play();
-		setIsPlaying(true);
-	}, []);
+	useEffect(() => {
+		if (hasInteracted && isPlaying && audioRef.current) {
+			audioRef.current.play().catch((e) => console.warn("Auto-play error:", e));
+		}
+	}, [hasInteracted, isPlaying, currentSongIndex]);
+
+	const toggleExpand = () => setIsExpanded(!isExpanded);
 
 	const togglePlay = () => {
 		if (!audioRef.current) return;
 		if (isPlaying) {
 			audioRef.current.pause();
 		} else {
-			audioRef.current.play();
+			audioRef.current.play().catch((e) => console.warn(e));
 		}
 		setIsPlaying(!isPlaying);
 	};
@@ -102,8 +123,9 @@ const Music = () => {
 			</button>
 
 			<div
-				className={styles.personImageContainer}
-				style={{ height: isExpanded ? "6rem" : "5rem" }}>
+				className={`${styles.personImageContainer} ${
+					isExpanded ? styles.expanded : styles.collapsed
+				}`}>
 				<img
 					src='/images/radiobox.png'
 					alt='Person with music player'
@@ -114,7 +136,7 @@ const Music = () => {
 				ref={audioRef}
 				src={playlist[currentSongIndex].src}
 				onEnded={playNext}
-				autoPlay
+				// autoPlay
 			/>
 
 			<div className={styles.visualizer}>
@@ -131,8 +153,8 @@ const Music = () => {
 
 			{isExpanded && (
 				<div className={styles.songDetails}>
-					<h5>{playlist[currentSongIndex].title}</h5>
-					<h6>{playlist[currentSongIndex].artist}</h6>
+					<h4>{playlist[currentSongIndex].title}</h4>
+					<p>{playlist[currentSongIndex].artist}</p>
 				</div>
 			)}
 

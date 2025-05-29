@@ -7,40 +7,46 @@ const ThemeContext = createContext();
 export function ThemeProvider({ children }) {
 	const [theme, setTheme] = useState("dark");
 	const [isMobile, setIsMobile] = useState(false);
+	const [mounted, setMounted] = useState(false);
+	const [hasInteracted, setHasInteractedState] = useState(() => {
+		return sessionStorage.getItem("hasInteracted") === "true";
+	});
+
+	const setHasInteracted = (value) => {
+		sessionStorage.setItem("hasInteracted", value);
+		setHasInteractedState(value);
+	};
 
 	useEffect(() => {
-		const storedTheme = localStorage.getItem("theme");
-		const initialTheme = storedTheme || "dark"; // Default to dark
-		setTheme(initialTheme);
-		if (initialTheme === "dark") {
-			document.documentElement.classList.add("dark");
-		} else {
-			document.documentElement.classList.remove("dark");
+		if (typeof window !== "undefined") {
+			const storedTheme = sessionStorage.getItem("theme") || "dark";
+			setTheme(storedTheme);
+			document.documentElement.classList.toggle("dark", storedTheme === "dark");
+
+			const handleResize = () => setIsMobile(window.innerWidth <= 768);
+			handleResize();
+			window.addEventListener("resize", handleResize);
+
+			setMounted(true); // <-- wait until DOM available
+
+			return () => {
+				window.removeEventListener("resize", handleResize);
+			};
 		}
 	}, []);
 
 	const toggleTheme = () => {
 		const newTheme = theme === "light" ? "dark" : "light";
 		setTheme(newTheme);
-
-		if (newTheme === "dark") {
-			document.documentElement.classList.add("dark");
-		} else {
-			document.documentElement.classList.remove("dark");
-		}
-
-		localStorage.setItem("theme", newTheme);
+		sessionStorage.setItem("theme", newTheme);
+		document.documentElement.classList.toggle("dark", newTheme === "dark");
 	};
 
-	useEffect(() => {
-		const handleResize = () => setIsMobile(window.innerWidth <= 768);
-		handleResize(); // Initial check
-		window.addEventListener("resize", handleResize);
-		return () => window.removeEventListener("resize", handleResize);
-	}, []);
+	if (!mounted) return null;
 
 	return (
-		<ThemeContext.Provider value={{ theme, toggleTheme, isMobile }}>
+		<ThemeContext.Provider
+			value={{ theme, toggleTheme, isMobile, hasInteracted, setHasInteracted }}>
 			{children}
 		</ThemeContext.Provider>
 	);

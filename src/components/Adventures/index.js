@@ -86,6 +86,7 @@ const Adventures = () => {
 						<Image
 							src={background}
 							fill
+							sizes='100vw'
 							alt='image'
 							style={{ objectFit: "cover", objectPosition: "center 90%" }}
 						/>
@@ -147,6 +148,7 @@ const Column = ({ images, y = 0 }) => {
 						<Image
 							src={image}
 							fill
+							sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
 							alt={i}
 						/>
 					</div>

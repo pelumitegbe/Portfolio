@@ -1,0 +1,55 @@
+.social {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	bottom: 2%;
+	right: 2%;
+	z-index: 9999;
+	gap: 2rem;
+	pointer-events: none;
+	mix-blend-mode: difference;
+}
+.social svg {
+	font-size: 20px;
+	color: var(--primary-color);
+}
+
+.social .bounds {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: all;
+}
+
+.social .bounds:hover {
+	transform: scale(3.5);
+}
+
+/* Medium screens (tablet) */
+@media (min-width: 769px) and (max-width: 1024px) {
+	.social {
+		gap: 1.5rem;
+	}
+	.social svg {
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 768px) {
+	.social {
+		gap: 1rem;
+	}
+	.social svg {
+		font-size: 16px;
+	}
+}
+@media (max-width: 480px) {
+	.social {
+		gap: 0.7rem;
+	}
+	.social svg {
+		font-size: 14px;
+	}
+}

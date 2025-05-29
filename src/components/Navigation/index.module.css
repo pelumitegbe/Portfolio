@@ -129,6 +129,11 @@
 	display: block;
 	text-align: left;
 }
+.menuBtns.open > a {
+	color: var(--foreground);
+	transition: color 1s ease-in-out;
+}
+
 .menuIconWrapper {
 	position: relative;
 	z-index: 10000;
@@ -190,6 +195,10 @@
 	width: 50%;
 }
 
+.menuIcon.open span {
+	background: var(--foreground);
+}
+
 .menuIcon.open .bar1 {
 	transform: rotate(45deg) translateY(5px) translateX(5px);
 	width: 100%;
@@ -212,13 +221,14 @@
 	flex-direction: column;
 	align-items: center;
 	right: 0;
-	background: var(--foreground);
+	background: var(--primary-color);
 	border-radius: 1rem;
 	list-style: none;
 	z-index: 9;
 	justify-content: center;
 	gap: 2rem;
-	color: var(--text-color);
+	color: var(--foreground);
+	overflow: hidden;
 }
 
 .dropdown.open {

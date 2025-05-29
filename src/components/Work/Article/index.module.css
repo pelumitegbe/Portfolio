@@ -113,9 +113,10 @@
 @media (max-width: 480px) {
 	.articleContainer {
 		flex: 0 0 calc(85vw - 2vw);
+		padding: 1rem;
 	}
 	.articleContainer .article {
-		padding: 1.3rem;
+		padding: 1rem;
 	}
 	.mainOverlay .articleDesc {
 		gap: 1rem;

@@ -19,10 +19,10 @@ const About = () => {
 			description:
 				"I've worked on various projects, including creating custom SharePoint solutions, developing web applications using React, Next.js, and TypeScript, and building RESTful APIs using Node.js and Express.js. I've also collaborated with other developers to maintain and improve the codebase.",
 			stack: [
-				{ title: "React" },
-				{ title: "Typescript" },
-				{ title: "Next js" },
-				{ title: "Node JS" },
+				{ title: "OpenMP" },
+				{ title: "Parallel Programming" },
+				{ title: "CUDA" },
+				{ title: "MPI" },
 			],
 		},
 		{
@@ -90,7 +90,9 @@ const About = () => {
 	});
 
 	return (
-		<div className={`${styles.about} page bg2`}>
+		<div
+			className={`${styles.about} page bg2`}
+			id='about'>
 			{/* <span>ABOUT</span> */}
 			<div className={styles.about_text}>
 				<ScrollSlideIn as='h1'>About me</ScrollSlideIn>
@@ -133,7 +135,9 @@ const About = () => {
 							</p>
 						</ScrollSlideUpFast>
 						<ScrollSlideUpFast>
-							<button>Contact me</button>
+							<a href='#contact'>
+								<button>Contact me</button>
+							</a>
 						</ScrollSlideUpFast>
 					</div>
 				</div>

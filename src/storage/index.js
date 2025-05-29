@@ -1,5 +1,3 @@
-import { FaCode } from "react-icons/fa";
-
 export const articles = [
 	{
 		title: "Personality Sphere",

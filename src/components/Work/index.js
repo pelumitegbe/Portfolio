@@ -26,7 +26,8 @@ const Work = () => {
 		<div
 			ref={containerRef}
 			className={styles.workWrapper}
-			style={{ height: `${totalX}vh` }}>
+			style={{ height: `${totalX}vh` }}
+			id='work'>
 			<div className={`${styles.work} `}>
 				<div className={styles.workContent}>
 					<ScrollSlideIn as='h1'>SELECTED WORKS</ScrollSlideIn>

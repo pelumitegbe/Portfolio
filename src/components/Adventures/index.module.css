@@ -1,6 +1,7 @@
 .allAdventures {
 	display: flex;
 	flex-direction: column;
+	overflow: hidden;
 }
 .adventures {
 	height: 100vh;
@@ -16,7 +17,7 @@
 	top: -10vh;
 	left: 0;
 	height: 120vh;
-	width: 100%;
+	width: 100vw;
 }
 
 .adventuresCont div {

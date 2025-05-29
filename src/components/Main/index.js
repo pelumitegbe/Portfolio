@@ -39,10 +39,16 @@ const Main = () => {
 				</MobileRevealY>
 				<div className={styles.main_buttons}>
 					<SlideLeft delay={1.5}>
-						<button>Hire Me</button>
+						<a href='#contact'>
+							<button>Hire Me</button>
+						</a>
 					</SlideLeft>
 					<SlideRight delay={1.7}>
-						<button className={styles.main_buttons_n2}>My CV</button>
+						<a
+							href='https://drive.google.com/file/d/1nF2v2HzhTrhJbW697PjSWAeHCrNhirPr/view?usp=sharing'
+							target='_blank'>
+							<button className={styles.main_buttons_n2}>My CV</button>
+						</a>
 					</SlideRight>
 				</div>
 			</section>
