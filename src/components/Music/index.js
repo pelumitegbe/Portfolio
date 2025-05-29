@@ -56,20 +56,37 @@ const playlist = [
 
 const Music = () => {
 	const { hasInteracted } = useTheme();
-	const [currentSongIndex, setCurrentSongIndex] = useState(() => {
-		const saved = sessionStorage.getItem("music-currentIndex");
-		return saved !== null ? parseInt(saved) : 0;
-	});
 
-	const [isPlaying, setIsPlaying] = useState(() => {
-		const stored = sessionStorage.getItem("music-isPlaying");
-		return stored === null ? true : stored === "true";
-	});
+	const [currentSongIndex, setCurrentSongIndex] = useState(0);
+	const [isPlaying, setIsPlaying] = useState(false);
+	const [isExpanded, setIsExpanded] = useState(true);
 
-	const [isExpanded, setIsExpanded] = useState(() => {
-		const saved = sessionStorage.getItem("music-isExpanded");
-		return saved !== null ? saved === "true" : true;
-	});
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			const savedIndex = sessionStorage.getItem("music-currentIndex");
+			const playing = sessionStorage.getItem("music-isPlaying");
+			const expanded = sessionStorage.getItem("music-isExpanded");
+
+			if (savedIndex) setCurrentSongIndex(parseInt(savedIndex));
+			if (playing) setIsPlaying(playing === "true");
+			if (expanded) setIsExpanded(expanded === "true");
+		}
+	}, []);
+
+	// const [currentSongIndex, setCurrentSongIndex] = useState(() => {
+	// 	const saved = sessionStorage.getItem("music-currentIndex");
+	// 	return saved !== null ? parseInt(saved) : 0;
+	// });
+
+	// const [isPlaying, setIsPlaying] = useState(() => {
+	// 	const stored = sessionStorage.getItem("music-isPlaying");
+	// 	return stored === null ? true : stored === "true";
+	// });
+
+	// const [isExpanded, setIsExpanded] = useState(() => {
+	// 	const saved = sessionStorage.getItem("music-isExpanded");
+	// 	return saved !== null ? saved === "true" : true;
+	// });
 
 	const audioRef = useRef(null);
 

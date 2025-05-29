@@ -8,9 +8,15 @@ export function ThemeProvider({ children }) {
 	const [theme, setTheme] = useState("dark");
 	const [isMobile, setIsMobile] = useState(false);
 	const [mounted, setMounted] = useState(false);
-	const [hasInteracted, setHasInteractedState] = useState(() => {
-		return sessionStorage.getItem("hasInteracted") === "true";
-	});
+
+	const [hasInteracted, setHasInteractedState] = useState(false);
+
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			const stored = sessionStorage.getItem("hasInteracted");
+			setHasInteractedState(stored === "true");
+		}
+	}, []);
 
 	const setHasInteracted = (value) => {
 		sessionStorage.setItem("hasInteracted", value);
