@@ -5,12 +5,15 @@
 	border-radius: 10px;
 	position: fixed;
 	left: 1%;
-	bottom: 1%;
+	bottom: calc(1% + env(safe-area-inset-bottom));
 	align-items: center;
 	display: flex;
 	gap: 0.7rem;
 	z-index: 10000000;
 	height: 4rem;
+	/* overflow: hidden; */
+	/* max-width: 30vw; */
+	padding: 0.5rem;
 }
 
 .musicBox > button {
@@ -18,8 +21,8 @@
 	border: none;
 	cursor: pointer;
 	position: absolute;
-	top: -10px;
-	right: -10px;
+	top: -15px;
+	right: -15px;
 	background: rgba(255, 255, 255, 0.08);
 	backdrop-filter: blur(5px);
 	border: 1px solid var(--primary-color);
