@@ -18,24 +18,14 @@ const playlist = [
 		src: "/audio/blurry-nights.mp3",
 	},
 	{
+		title: "Fairytale",
+		artist: "Livingston",
+		src: "/audio/fairytale.mp3",
+	},
+	{
 		title: "Boomerang",
 		artist: "Imagine Dragons",
 		src: "/audio/boomerang.mp3",
-	},
-	{
-		title: "The Unknown",
-		artist: "Imagine Dragons",
-		src: "/audio/the-unknown.mp3",
-	},
-	{
-		title: "Cautionary Tales",
-		artist: "Jon Bellion",
-		src: "/audio/cautionary-tales.mp3",
-	},
-	{
-		title: "Woke The F*ck Up",
-		artist: "Jon Bellion",
-		src: "/audio/woke-the-fuck-up.mp3",
 	},
 	{
 		title: "Look Mum I Can Fly",
@@ -43,9 +33,19 @@ const playlist = [
 		src: "/audio/look-mum-i-can-fly.mp3",
 	},
 	{
-		title: "Fairytale",
-		artist: "Livingston",
-		src: "/audio/fairytale.mp3",
+		title: "Cautionary Tales",
+		artist: "Jon Bellion",
+		src: "/audio/cautionary-tales.mp3",
+	},
+	{
+		title: "The Unknown",
+		artist: "Imagine Dragons",
+		src: "/audio/the-unknown.mp3",
+	},
+	{
+		title: "Woke The F*ck Up",
+		artist: "Jon Bellion",
+		src: "/audio/woke-the-fuck-up.mp3",
 	},
 	{
 		title: "Like This",
