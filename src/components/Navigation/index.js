@@ -207,14 +207,14 @@ const Navigation = () => {
 							className={`${styles.menuBtns} ${menuOpen ? styles.open : ""}`}>
 							<motion.a
 								onClick={toggleMenu}
-								animate={{ y: menuOpen ? "-120%" : "0", opacity: 1 }}
+								animate={{ y: menuOpen ? "-100%" : "0", opacity: 1 }}
 								transition={{ duration: 0.5, ease: [0.65, 0, 0.35, 1] }}
 								initial={{ opacity: 0 }}>
 								Menu
 							</motion.a>
 							<motion.a
 								onClick={toggleMenu}
-								animate={{ y: menuOpen ? "-120%" : "0", opacity: 1 }}
+								animate={{ y: menuOpen ? "-100%" : "0", opacity: 1 }}
 								transition={{ duration: 0.5, ease: [0.65, 0, 0.35, 1] }}
 								initial={{ opacity: 0 }}>
 								Close
