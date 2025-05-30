@@ -86,7 +86,6 @@ const Adventures = () => {
 						<Image
 							src={background}
 							fill
-							// sizes='100vw'
 							alt='image'
 							style={{ objectFit: "cover", objectPosition: "center 90%" }}
 						/>
