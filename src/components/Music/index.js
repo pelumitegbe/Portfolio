@@ -68,13 +68,7 @@ const Music = () => {
 			const playing = sessionStorage.getItem("music-isPlaying");
 			const expanded = sessionStorage.getItem("music-isExpanded");
 
-			if (playing === null) {
-				setIsPlaying(true); // First time visitor, default to playing
-			} else {
-				setIsPlaying(playing === "true");
-			}
-
-			// Random song if not saved
+			// Load current song index
 			if (savedIndex !== null) {
 				setCurrentSongIndex(parseInt(savedIndex));
 			} else {
@@ -82,36 +76,38 @@ const Music = () => {
 				setCurrentSongIndex(randomIndex);
 			}
 
-			// Default to expanded true
-			if (expanded !== null) {
-				setIsExpanded(expanded === "true");
-			} else {
-				setIsExpanded(true);
-			}
-		}
-		setHydrated(true);
-	}, []);
+			// Load play state
+			setIsPlaying(playing === null ? true : playing === "true");
 
-	useEffect(() => {
-		if (hasInteracted && isPlaying && audioRef.current) {
-			audioRef.current.play().catch((e) => console.warn("Auto-play error:", e));
+			// Load expand state
+			setIsExpanded(expanded === null ? true : expanded === "true");
 		}
-	}, [hasInteracted, isPlaying, currentSongIndex]);
+	}, []);
 
 	useEffect(() => {
 		if (audioRef.current) {
 			audioRef.current.volume = 0.02;
+
+			// Only auto-play if user has interacted
+			if (hasInteracted && isPlaying) {
+				audioRef.current
+					.play()
+					.catch((e) => console.warn("Auto-play error:", e));
+			}
 		}
-	}, []);
+	}, [hasInteracted, isPlaying, currentSongIndex]);
 
-	// Save state on change
 	useEffect(() => {
-		if (!hydrated) return;
-		sessionStorage.setItem("music-isPlaying", isPlaying);
-		sessionStorage.setItem("music-currentIndex", currentSongIndex);
-		sessionStorage.setItem("music-isExpanded", isExpanded);
-	}, [isPlaying, currentSongIndex, isExpanded, hydrated]);
+		if (hydrated) {
+			sessionStorage.setItem("music-isPlaying", isPlaying);
+			sessionStorage.setItem("music-currentIndex", currentSongIndex);
+			sessionStorage.setItem("music-isExpanded", isExpanded);
+		}
+	}, [hydrated, isPlaying, currentSongIndex, isExpanded]);
 
+	useEffect(() => {
+		setHydrated(true);
+	}, []);
 	const toggleExpand = () => setIsExpanded(!isExpanded);
 
 	const togglePlay = () => {
