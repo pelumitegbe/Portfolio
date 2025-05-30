@@ -1,5 +1,6 @@
 .contact {
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	align-items: center;
 	gap: 4rem;
 	overflow: hidden;
@@ -7,7 +8,6 @@
 
 .contact .right {
 	position: relative;
-	width: 50%;
 	height: 100%;
 }
 
@@ -52,18 +52,19 @@
 }
 
 .contact .left {
-	width: 50%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	position: relative;
 	gap: 2rem;
 }
-
+.contact .imgContainer {
+	width: fit-content;
+}
 .contact img {
 	object-fit: cover;
-	width: 80%;
 	height: 100%;
+	width: 100%;
 }
 
 .contact .reach {

@@ -20,7 +20,6 @@
 }
 .logo img {
 	max-height: 7vh;
-	width: 100%;
 	object-fit: contain;
 }
 

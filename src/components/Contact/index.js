@@ -57,7 +57,9 @@ const Contact = () => {
 			className={`${styles.contact} page`}
 			id='contact'>
 			<div className={styles.left}>
-				<ScrollSlideUp offsetY='150px'>
+				<ScrollSlideUp
+					offsetY='150px'
+					className={styles.imgContainer}>
 					<img
 						src='/images/contact.png'
 						alt='Contact'
