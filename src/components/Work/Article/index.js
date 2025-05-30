@@ -35,11 +35,15 @@ export const Article = ({
 					<div className={styles.articleDesc}>
 						<p>{description}</p>
 						<div className={styles.articleBtns}>
-							<a href={link}>
+							<a
+								href={link}
+								target='_blank'>
 								<button>Live Site</button>
 							</a>
 							{github && (
-								<a href={github}>
+								<a
+									href={github}
+									target='_blank'>
 									<button>Source Code</button>
 								</a>
 							)}

@@ -16,7 +16,7 @@ export const articles = [
 		bg: "grey",
 		videoSrc: "/images/porfolioVid.mov",
 		link: "https://pelumi-tegbe.vercel.app/",
-		github: "https://github.com/pelumitegbe/Portfolio",
+		// github: "https://github.com/pelumitegbe/Portfolio",
 	},
 	{
 		title: "Get Shoes",
@@ -46,7 +46,7 @@ export const articles = [
 		imgSrc: "/images/pelskyflix.png",
 		bg: "grey",
 		videoSrc: "/images/pelskyflixVideo.mov",
-		link: "https://pelskyflixweb.app/",
+		link: "https://pelskyflix.web.app/",
 		github: null,
 	},
 	{

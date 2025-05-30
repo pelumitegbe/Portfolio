@@ -23,14 +23,6 @@ const Socials = () => {
 			</Magnetic>
 			<Magnetic>
 				<a
-					href='https://instagram.com/pe.lumi_'
-					target='_blank'>
-					<FaInstagram />
-					<div className={styles.bounds}></div>
-				</a>
-			</Magnetic>
-			<Magnetic>
-				<a
 					href='https://www.linkedin.com/in/pelumitegbe/'
 					target='_blank'>
 					<FaLinkedin />
@@ -42,14 +34,6 @@ const Socials = () => {
 					href='https://github.com/pelumitegbe'
 					target='_blank'>
 					<FaGithub />
-					<div className={styles.bounds}></div>
-				</a>
-			</Magnetic>
-			<Magnetic>
-				<a
-					href='https://x.com/pe_lumi_'
-					target='_blank'>
-					<FaXTwitter />
 					<div className={styles.bounds}></div>
 				</a>
 			</Magnetic>

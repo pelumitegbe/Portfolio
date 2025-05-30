@@ -5,7 +5,7 @@
 	bottom: 2%;
 	right: 2%;
 	z-index: 9999;
-	gap: 2rem;
+	gap: 3rem;
 	pointer-events: none;
 	mix-blend-mode: difference;
 }
@@ -30,7 +30,7 @@
 /* Medium screens (tablet) */
 @media (min-width: 769px) and (max-width: 1024px) {
 	.social {
-		gap: 1.7rem;
+		gap: 2.5rem;
 	}
 	.social svg {
 		font-size: 26px;
@@ -39,7 +39,7 @@
 
 @media (max-width: 768px) {
 	.social {
-		gap: 1.5rem;
+		gap: 2.2rem;
 	}
 	.social svg {
 		font-size: 24px;
@@ -47,7 +47,7 @@
 }
 @media (max-width: 480px) {
 	.social {
-		gap: 1rem;
+		gap: 2rem;
 	}
 	.social svg {
 		font-size: 20px;

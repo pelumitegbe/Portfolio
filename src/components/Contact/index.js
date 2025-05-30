@@ -79,14 +79,14 @@ const Contact = () => {
 									<div className={styles.bounds}></div>
 								</a>
 							</Magnetic>
-							<Magnetic>
+							{/* <Magnetic>
 								<a
 									href='https://www.instagram.com/pe.lumi_'
 									target='_blank'>
 									<FaInstagram size={24} />
 									<div className={styles.bounds}></div>
 								</a>
-							</Magnetic>
+							</Magnetic> */}
 							<Magnetic>
 								<a
 									href='https://www.linkedin.com/in/pelumitegbe'
@@ -103,14 +103,14 @@ const Contact = () => {
 									<div className={styles.bounds}></div>
 								</a>
 							</Magnetic>
-							<Magnetic>
+							{/* <Magnetic>
 								<a
 									href='https://x.com/pe_lumi_'
 									target='_blank'>
 									<FaXTwitter size={24} />
 									<div className={styles.bounds}></div>
 								</a>
-							</Magnetic>
+							</Magnetic> */}
 						</div>
 					</div>
 				</SlideLeft>

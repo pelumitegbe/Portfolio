@@ -56,7 +56,7 @@ const playlist = [
 
 const Music = () => {
 	const { hasInteracted } = useTheme();
-
+	const audioRef = useRef(null);
 	const [currentSongIndex, setCurrentSongIndex] = useState(0);
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [isExpanded, setIsExpanded] = useState(false);
@@ -73,9 +73,20 @@ const Music = () => {
 			} else {
 				setIsPlaying(playing === "true");
 			}
-			if (savedIndex) setCurrentSongIndex(parseInt(savedIndex));
+
+			// Random song if not saved
+			if (savedIndex !== null) {
+				setCurrentSongIndex(parseInt(savedIndex));
+			} else {
+				const randomIndex = Math.floor(Math.random() * playlist.length);
+				setCurrentSongIndex(randomIndex);
+			}
+
+			// Default to expanded true
 			if (expanded !== null) {
 				setIsExpanded(expanded === "true");
+			} else {
+				setIsExpanded(true);
 			}
 		}
 		setHydrated(true);
@@ -87,7 +98,11 @@ const Music = () => {
 		}
 	}, [hasInteracted, isPlaying, currentSongIndex]);
 
-	const audioRef = useRef(null);
+	useEffect(() => {
+		if (audioRef.current) {
+			audioRef.current.volume = 0.02;
+		}
+	}, []);
 
 	// Save state on change
 	useEffect(() => {
