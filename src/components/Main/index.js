@@ -14,7 +14,7 @@ const Main = () => {
 	const { isMobile } = useTheme();
 
 	return (
-		<main className={`${styles.main} g1 page`}>
+		<main className={`${styles.main} page`}>
 			<section>
 				<MobileRevealY
 					delay={1}

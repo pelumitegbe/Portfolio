@@ -25,9 +25,8 @@
 
 html,
 body {
-	max-width: 100vw;
+	/* max-width: 100vw; */
 	height: 100%;
-	scroll-behavior: auto !important;
 }
 
 @font-face {
@@ -51,8 +50,6 @@ body {
 	color: var(--text-color);
 	background: var(--background);
 	font-family: "Inter", Arial, Helvetica, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 	transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
@@ -104,45 +101,6 @@ li {
 	cursor: pointer;
 }
 
-.p1 {
-	padding: 1rem;
-}
-.p2 {
-	padding: 2rem;
-}
-.p3 {
-	padding: 3rem;
-}
-.p4 {
-	padding: 4rem;
-}
-.m1 {
-	margin: 1rem;
-}
-.m2 {
-	margin: 2rem;
-}
-.m3 {
-	margin: 3rem;
-}
-.m4 {
-	margin: 4rem;
-}
-.g-5 {
-	gap: 0.5rem;
-}
-.g1 {
-	gap: 1rem;
-}
-.g2 {
-	gap: 2rem;
-}
-.g3 {
-	gap: 3rem;
-}
-.g4 {
-	gap: 4rem;
-}
 button {
 	padding: 1rem;
 	border-radius: 10px;
