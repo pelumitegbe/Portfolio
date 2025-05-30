@@ -15,7 +15,7 @@ export const articles = [
 		imgSrc: "/images/portfolio.png",
 		bg: "grey",
 		videoSrc: "/images/porfolioVid.mov",
-		link: "https://personality-sphere.vercel.app/",
+		link: "https://pelumi-tegbe.vercel.app/",
 		github: "https://github.com/pelumitegbe/Portfolio",
 	},
 	{
